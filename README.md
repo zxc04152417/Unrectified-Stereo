@@ -1,7 +1,33 @@
-# Unrectified-Stereoecho "# Unrectified-Stereo" >> README.md
-git init
-git add README.md
-git commit -m "first commit"
-git branch -M main
-git remote add origin https://github.com/zxc04152417/Unrectified-Stereo.git
-git push -u origin main
+
+
+```Shell
+pip install torch==2.0.1 torchvision==0.15.2 torchaudio==2.0.2 --index-url https://download.pytorch.org/whl/cu118
+pip install tqdm
+pip install scipy
+pip install opencv-python
+pip install scikit-image
+pip install tensorboard
+pip install matplotlib 
+pip install timm==0.6.13
+pip install mmcv==2.1.0 -f https://download.openmmlab.com/mmcv/dist/cu118/torch2.1/index.html
+pip install accelerate==1.0.1
+pip install gradio_imageslider
+pip install gradio==4.29.0
+
+```
+
+
+
+## ✈️ Evaluation
+
+python evaluate_stereo.py 
+
+## ✈️ Training
+
+```Shell
+CUDA_VISIBLE_DEVICES=0,1,2,3 accelerate launch train_kitti.py   (for KITTI)
+CUDA_VISIBLE_DEVICES=0,1,2,3 accelerate launch train_eth3d.py   (for ETH3D)
+CUDA_VISIBLE_DEVICES=0,1,2,3 accelerate launch train_sceneflow.py   (for Scene Flow)
+```
+
+
