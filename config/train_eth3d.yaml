@@ -1,0 +1,31 @@
+wandb: {}
+project_name: eth3d
+restore_ckpt: "/home/kemove/zxc/training_EH3D/MonSter-main_2D_double/MonSter-main_2D_scale/pretrained/eth3d.pth"
+# restore_ckpt: "/data2/cjd/mono_fusion/checkpoints/sceneflow.pth"
+logdir: '/media/kemove/zxc/ETH3D/checkpoints/eth3d1/'
+encoder: 'vitl'
+batch_size: 3
+train_datasets: ['eth3d_finetune']
+lr: 1e-4
+wdecay: 1e-5
+total_step: 150000
+save_frequency: 2500   #2500
+save_path: '/media/kemove/zxc/ETH3D/checkpoints/eth3d1/'
+val_frequency: 2500 #2500
+image_size: [320, 736]
+train_iters: 21
+valid_iters: 32
+val_dataset: 'kitti'
+corr_implementation: "reg"
+corr_levels: 2
+corr_radius: 4
+n_downsample: 2
+n_gru_layers: 3
+hidden_dims: [128, 128, 128]
+max_disp: 192
+saturation_range: [0.0, 1.4]
+do_flip: False
+spatial_scale: [-0.2, 0.4]
+noyjitter: True
+num_gpu: 1
+seed: 666
